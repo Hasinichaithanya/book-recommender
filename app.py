@@ -51,7 +51,7 @@ def show_book_details(book_title):
     rec_cols = st.columns(5)
     for i in range(len(recommendations)):
         with rec_cols[i]:
-            st.image(recommendations[i][2], use_column_width=True)
+            st.image(recommendations[i][2], use_container_width=True)
             st.caption(recommendations[i][0])
             st.text(recommendations[i][1])
 
@@ -92,7 +92,7 @@ for row in range(num_rows):
         if book_idx < len(popular):
             book_data = popular.iloc[book_idx]
             with cols[col]:
-                st.image(book_data['Image-URL-M'], use_column_width=True)
+                st.image(book_data['Image-URL-M'], use_container_width=True)
                 if st.button(f"View '{book_data['Book-Title']}'", key=f"btn_{book_idx}"):
                     st.session_state.clicked_book = book_data['Book-Title']
                     st.rerun() 
